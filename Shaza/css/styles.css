@@ -241,6 +241,11 @@ body {
 img {
   max-width: 100%;
 }
+
+::selection{
+  background-color: #dcb04d;
+  color: #ffffff;
+}
 a {
   color: #555555;
   text-decoration: none;
