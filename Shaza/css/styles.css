@@ -242,11 +242,15 @@ img {
   max-width: 100%;
 }
 
+/* Dropdown container */
 .dropdown {
   position: relative;
-  width: 100%; /* Make sure it takes the full width */
+  width: 100%;
+  margin-bottom: 20px; /* Add space below the dropdown */
+  margin-left: 18px; /* Add space below the dropdown */
 }
 
+/* The select box */
 .select {
   background: #ececec;
   color: #00000079;
@@ -258,19 +262,22 @@ img {
   padding: 1em;
   cursor: pointer;
   transition: 0.3s;
-  width: 100%;
+  width: 90%; /* Ensure the select takes the full width */
+  font-size: 13px; /* Set the same font size as the text fields */
 }
 
+/* Hover and active states */
 .select-clicked {
   border: #dcb04d;
   box-shadow: 0 0 0.8em #00000027;
 }
 
-.select:hover{
+.select:hover {
   background: #dcb04d;
   color: #fff;
 }
 
+/* Dropdown caret */
 .caret {
   width: 0;
   height: 0;
@@ -284,19 +291,21 @@ img {
   transform: rotate(180deg);
 }
 
+/* Dropdown menu */
 .menu {
   list-style: none;
   padding: 0.2em 0.5em;
   background: #ececec;
-  /* border: 1px solid #dcb04d; */
   border-radius: 0.5em;
   color: #838392;
   max-height: 0; /* Start with height collapsed */
   overflow: hidden; /* Hide the content when not expanded */
   transition: max-height 0.3s ease-out; /* Smoothly transition height */
-  width: 100%;
+  width: 90%; /* Make sure the menu matches the width of the dropdown */
+  font-size: 13px; /* Set the same font size as the text fields */
 }
 
+/* Menu items */
 .menu li {
   padding: 0.7em 0.5em;
   margin: 0.3em 0;
@@ -304,20 +313,23 @@ img {
   cursor: pointer;
 }
 
+/* Hover effect */
 .menu li:hover {
   background: #dcb04d;
   color: #fff;
 }
 
+/* Active state */
 .active {
   background: #e9cb85;
   color: #fff;
 }
 
+/* Menu opened state */
 .menu-open {
-  max-height: 200px; /* Set this to a value that fits your content */
+  max-height: 200px; /* Set this to limit the size of the menu */
+  overflow-y: auto; /* Add vertical scroll for overflowing content */
 }
-
 ::selection{
   background-color: #dcb04d;
   color: #ffffff;
