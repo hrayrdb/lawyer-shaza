@@ -242,6 +242,82 @@ img {
   max-width: 100%;
 }
 
+.dropdown {
+  position: relative;
+  width: 100%; /* Make sure it takes the full width */
+}
+
+.select {
+  background: #ececec;
+  color: #00000079;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.select-clicked {
+  border: #dcb04d;
+  box-shadow: 0 0 0.8em #00000027;
+}
+
+.select:hover{
+  background: #dcb04d;
+  color: #fff;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #fff;
+  transition: 0.3s;
+}
+
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: #ececec;
+  /* border: 1px solid #dcb04d; */
+  border-radius: 0.5em;
+  color: #838392;
+  max-height: 0; /* Start with height collapsed */
+  overflow: hidden; /* Hide the content when not expanded */
+  transition: max-height 0.3s ease-out; /* Smoothly transition height */
+  width: 100%;
+}
+
+.menu li {
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background: #dcb04d;
+  color: #fff;
+}
+
+.active {
+  background: #e9cb85;
+  color: #fff;
+}
+
+.menu-open {
+  max-height: 200px; /* Set this to a value that fits your content */
+}
+
 ::selection{
   background-color: #dcb04d;
   color: #ffffff;
@@ -281,7 +357,7 @@ h1 {
   font-size: 36px;
 }
 h2 {
-  font-size: 24px;
+  font-size:24px;
 }
 h2 + p {
   margin-top: 12px;
@@ -4511,6 +4587,8 @@ a.btn-cta-2:hover {
 }
 .appointment-form-wrapper .appoinment-form .form-control {
   font-size: 14px;
+  position: relative;
+  z-index: 2;
 }
 .appointment-form-wrapper .appoinment-form .form-group {
   margin-bottom: 0;
