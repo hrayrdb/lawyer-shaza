@@ -242,8 +242,13 @@
                                       </ul>
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <textarea id="textarea_message" class="form-control" rows="4" placeholder="Consultation summary..."  required="" data-msg="This field is required."></textarea>
-                                </div>         
+                                    <textarea id="textarea_message" class="form-control" rows="4" 
+                                        placeholder="Consultation summary..." 
+                                        maxlength="200" 
+                                        required="" 
+                                        data-msg="This field is required."></textarea>
+                                    <div id="charCount">0/200</div> <!-- Character count display -->
+                                </div>      
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12 text-center">
                                     <button id="btn_submit" class="btn btn-lg btn-theme btn-theme-invert" type="submit">Send Message</button>
                                 </div>
@@ -684,6 +689,7 @@
         <script src="js/venobox.min.js"></script>
         <script src="js/custom-scripts.js"></script>
         <script src="js/dropdown.js"></script>
+        <script src="js/char.js"></script>
     </body>
 
 </html>

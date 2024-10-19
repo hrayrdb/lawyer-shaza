@@ -409,17 +409,26 @@ input[type="text"],
 input[type="password"],
 input[type="submit"],
 input[type="button"],
-textarea {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+#charCount {
+  font-size: 10px;
+  color: #888; /* Light gray text for character count */
+  margin-top: 5px; /* Space between textarea and character count */
+  text-align: right; /* Align the text to the right */
+  transform: translateY(-23px); /* Move the character count upwards */
 }
+
+textarea {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 0.5em;
+  height: 150px;
+  resize: none;
+}
+
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="submit"]:focus,
