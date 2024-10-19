@@ -1689,6 +1689,7 @@ a.nav-btn-highlight:hover {
   color: #dcb04d;
 }
 .main-header-2 .header-container {
+  width: 100%;
   border-bottom: 0px solid #eeeeee;
   padding-bottom: 0px;
   box-shadow: 0px 0px 2px -4px rgba(0, 0, 0, 0.2);
@@ -1698,6 +1699,7 @@ a.nav-btn-highlight:hover {
   transition: all 0.2s ease-in-out;
 }
 .main-header-2 .header-top {
+  width: 100%;
   padding-bottom: 12px;
 }
 .main-header-2 .header-top .header-col-logo {
@@ -7933,3 +7935,9 @@ footer .social-icons a:hover {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+
+
+
+
+
