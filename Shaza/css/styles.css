@@ -5773,6 +5773,7 @@ ul.pagination li:last-child {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
+
 .faq-layout .faq-box .panel-heading:hover {
   background: #2c2c2c;
 }
@@ -5809,6 +5810,83 @@ ul.pagination li:last-child {
   margin-right: 10px;
 }
 .faq-layout .faq-box .panel-heading [data-toggle="collapse"].collapsed:after {
+  content: "\f0d7";
+}
+
+
+/***********************************************************************************************/
+/*  FAQ1 PAGE */
+/***********************************************************************************************/
+.faqq-layout {
+  position: relative;
+  overflow: hidden;
+}
+.faqq-layout .panel {
+  box-shadow: none;
+}
+.faqq-layout .panel-default {
+  position: relative;
+  border: 0px solid #eee;
+  padding: 17px 16px 0;
+  background: #f7f7f7;
+  border-radius: 0;
+}
+.faqq-layout .faqq-box .panel-heading {
+  background: none;
+  border: 0 none;
+  display: block;
+  padding: 16px;
+  margin: -16px -15px;
+  background: #dcb04d;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+
+.faqq-layout .faqq-box .panel-heading:hover {
+  background: #2c2c2c;
+}
+.faqq-layout .faqq-box .panel-title {
+  display: block;
+  letter-spacing: 0.03em;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: inherit;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.faqq-layout .faqq-box .panel-title > a {
+  line-height: 24px;
+  display: block;
+  color: #ffffff;
+}
+.faqq-layout .faqq-box .panel-title > a:hover,
+.faqq-layout .faqq-box .panel-title > a:focus {
+  outline: none;
+  color: #ffffff;
+}
+.faqq-layout .faqq-box .panel-body {
+  padding-top: 32px;
+  padding-left: 0px;
+  
+}
+.faqq-layout .faqq-box .panel-heading [data-toggle="collapse"]:after {
+  font-family: "FontAwesome";
+  content: "\f0d8";
+  float: left;
+  color: #ffffff;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.faqq-layout .faqq-box .panel-heading [data-toggle="collapse"].collapsed:after {
   content: "\f0d7";
 }
 /***********************************************************************************************/
@@ -7954,7 +8032,7 @@ footer .social-icons a:hover {
   background-color: #dcb04d;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0px;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
@@ -7981,6 +8059,43 @@ footer .social-icons a:hover {
   margin-top: 10px;
 }
 
+
+.recorder1-container {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.attachh-btn {
+  background-color: #dcb04d;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px; /* Add margin between the two buttons */
+}
+
+.attachh-btn:hover {
+  background-color: #b88c3d;
+}
+
+.hidden {
+  display: none; /* Completely hide the file input */
+}
+
+#file-name-1 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+#file-error-1 {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
 
 
 
