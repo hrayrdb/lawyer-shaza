@@ -3,61 +3,68 @@ const fileInput = document.getElementById('file-input');
 const fileNameElement = document.getElementById('file-name');
 const fileError = document.getElementById('file-error');
 const maxFileSize = 5 * 1024 * 1024; // 5MB in bytes
-const allowedExtensions = ['pdf', 'docx', 'wav', 'mp3']; // Allowed file extensions
+const allowedExtensions = ['pdf', 'docx', 'wav', 'mp3', 'jpg', 'png', 'jpeg'];
 
 // Backend URL where the file will be uploaded
-const uploadURL = 'https://your-server-url.com/upload';  // Replace with your backend API URL
+const uploadURL = 'https://lawyer-shaza.com/uploads/upload.php';
 
-// Handle attach file button (triggers the hidden file input)
-attachButton.addEventListener('click', () => {
-  fileInput.click(); // Programmatically click the hidden file input
+// Handle attach file button
+attachButton.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent page refresh if inside a form
+  fileInput.click(); // Programmatically trigger the file input
 });
 
 // Handle file input change
 fileInput.addEventListener('change', () => {
   const file = fileInput.files[0];
+  fileError.textContent = ''; // Clear previous errors
+  fileError.classList.add('hidden');
 
-  // Extract the file extension
+  if (!file) return; // Ensure a file is selected
+
   const fileExtension = file.name.split('.').pop().toLowerCase();
 
-  // Check if the file exceeds the 5MB limit or has an invalid extension
+  // Validate file size and type
   if (file.size > maxFileSize || !allowedExtensions.includes(fileExtension)) {
+    fileError.textContent = 'File exceeds the 5MB limit or is of an invalid type.';
     fileError.classList.remove('hidden');
     fileNameElement.classList.add('hidden');
-    fileInput.value = ''; // Clear the file input
+    fileInput.value = ''; // Clear the input
   } else {
-    fileError.classList.add('hidden');
-
-    // Display the file name
     fileNameElement.textContent = `Attached file: ${file.name}`;
     fileNameElement.classList.remove('hidden');
-
-    // Upload the file to the server
     uploadFile(file);
   }
 });
 
+// Upload file function
 function uploadFile(file) {
-    const formData = new FormData();
-    formData.append('file', file);
-  
-    fetch(uploadURL, {
-      method: 'POST',
-      body: formData
-    })
+  const formData = new FormData();
+  formData.append('file', file); // Key must match the PHP script key: $_FILES['file']
+
+  fetch(uploadURL, {
+    method: 'POST',
+    body: formData,
+  })
     .then(response => {
       if (!response.ok) {
-        return response.text().then((text) => { throw new Error(text); });
+        return response.text().then(text => {
+          throw new Error(text);
+        });
       }
       return response.json();
     })
     .then(data => {
-      console.log('File uploaded successfully:', data);
-      alert('File uploaded successfully!');
+      if (data.success) {
+        fileNameElement.textContent = `File uploaded successfully: ${file.name}`;
+        alert('File uploaded successfully!');
+      } else {
+        throw new Error(data.error || 'Unknown error during upload.');
+      }
     })
     .catch(error => {
+      fileError.textContent = `Error: ${error.message}`;
+      fileError.classList.remove('hidden');
       console.error('Error uploading file:', error.message);
-      alert('Error uploading file: ' + error.message);
     });
-  }
-  
+}

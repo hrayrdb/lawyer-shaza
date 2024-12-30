@@ -8099,3 +8099,7 @@ footer .social-icons a:hover {
 
 
 
+.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
